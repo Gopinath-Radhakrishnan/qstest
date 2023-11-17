@@ -1,5 +1,5 @@
 
-# Terraform AWS EC2 with Auto Scaling README
+# Terraform AWS EC2 with ALB & Auto Scaling
 
 ## Overview
 

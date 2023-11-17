@@ -19,6 +19,8 @@ export AWS_DEFAULT_REGION="your-region"
 
 3. **Key Pair:** Create an AWS key pair that will be used to access the EC2 instances. Save the private key locally.
 
+4. **AMI ID:** Use any latest Ubuntu AMI ID if you get ami not found error when running this solution. 
+
 ## Usage
 
 1. **Clone the Repository:**

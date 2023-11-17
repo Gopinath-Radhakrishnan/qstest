@@ -59,6 +59,17 @@ resource "aws_subnet" "public_zoneb" {
   }
 }
 
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.main.id
+  route {
+    cidr_block = var.public_route
+    gateway_id = aws_internet_gateway.this.id
+  }
+  tags = {
+    Name = "public"
+  }
+}
+
 resource "aws_nat_gateway" "nat_gateway" {
   allocation_id     = aws_eip.elastic_ip.id
   connectivity_type = "public"
@@ -82,16 +93,6 @@ resource "aws_route_table" "private" {
   }
 }
 
-resource "aws_route_table" "public" {
-  vpc_id = aws_vpc.main.id
-  route {
-    cidr_block = var.public_route
-    gateway_id = aws_internet_gateway.this.id
-  }
-  tags = {
-    Name = "public"
-  }
-}
 
 resource "aws_route_table_association" "private" {
   subnet_id      = aws_subnet.private_zonea.id

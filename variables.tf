@@ -59,13 +59,13 @@ variable "elb_port" {
 }
 
 variable "max_size" {
-  default = 2
+  default = 3
 }
 
 variable "min_size" {
-  default = 1
+  default = 2
 
 }
 variable "desired_capacity" {
-  default = 1
+  default = 2
 }

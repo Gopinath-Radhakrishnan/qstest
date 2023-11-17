@@ -25,5 +25,7 @@ resource "aws_lb_target_group" "target_group" {
   health_check {
     path    = "/"
     matcher = 200
+    timeout = 5
+    interval = 300
   }
 }
